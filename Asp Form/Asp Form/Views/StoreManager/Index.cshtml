@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
+@model MvcMusicStore.Models.Album
 
-<h2>Index</h2>
-
+<p><strong>Title</strong>: @Model.Title</p>
+<p><strong>Price</strong>: @Model.Price</p>
+<p><strong>AlbumArtUrl</strong>: @Model.AlbumArtUrl</p>

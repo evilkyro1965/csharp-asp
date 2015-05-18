@@ -32,16 +32,18 @@ namespace Asp_Form.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
         {
+            /*
             if (ModelState.IsValid)
             {
                 db.Albums.Add(album);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            */
 
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
-            return View(album);
+            return View("index",album);
         }
 
     }
